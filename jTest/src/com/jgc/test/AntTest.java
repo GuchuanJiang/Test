@@ -1,5 +1,5 @@
 
-package com.neusoft.test; 
+package com.jgc.test; 
 /** 
  *This is just a test class. 
 */ 

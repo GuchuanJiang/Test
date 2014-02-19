@@ -20,11 +20,8 @@
     </target>
 
     <target name="execute" depends="compile"> 
-        <java classname="com.neusoft.test.AntTest" 
+        <java classname="com.jgc.test.AntTest" 
             classpath="build/classes"> 
-            <arg value="a"/> 
-            <arg value="b"/> 
-            <arg file="."/> 
         </java> 
     </target> 
 </project>
