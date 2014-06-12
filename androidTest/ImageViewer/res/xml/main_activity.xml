@@ -6,7 +6,7 @@
         android:title="ListView" >
         <intent
             action="android.intent.action.MAIN"
-            android:targetClass="com.jgc.imageviewer.list.ListImageViewerActivity"
+            android:targetClass="com.jgc.imageviewer.list.ListViewImageViewerActivity"
             android:targetPackage="com.jgc.imageviewer" />
     </Preference>
     <Preference
@@ -15,6 +15,14 @@
         <intent
             action="android.intent.action.MAIN"
             android:targetClass="com.jgc.imageviewer.pager.ViewPagerImageViewerActivity"
+            android:targetPackage="com.jgc.imageviewer" />
+    </Preference>
+    <Preference
+        android:key="img_view_grid"
+        android:title="GridView" >
+        <intent
+            action="android.intent.action.MAIN"
+            android:targetClass="com.jgc.imageviewer.grid.GridViewImageViewerActivity"
             android:targetPackage="com.jgc.imageviewer" />
     </Preference>
 

@@ -43,9 +43,9 @@ public class ListViewAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.list_item, null);
             holder = new ViewHolder();
-            holder.img = (ImageView) convertView.findViewById(R.id.img_1);
+            holder.img = (ImageView) convertView.findViewById(R.id.img_list_item);
             ImgDownloadThread thread = new ImgDownloadThread(mContext, holder.img);
-            thread.execute(mUrls);
+            thread.execute(mUrls[position]);
             convertView.setTag(holder);
         }
         return convertView;
