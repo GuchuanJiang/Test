@@ -44,7 +44,7 @@ public class ImgDownloadThread extends AsyncTask<String, Float, WeakReference<Bi
         WeakReference<Bitmap> bitmapReference = null;
         Bitmap bitmap = null;
         try {
-            Thread.sleep(100);
+            Thread.sleep(500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <Preference
+        android:key="img_view_list"
+        android:title="ListView" >
+        <intent
+            action="android.intent.action.MAIN"
+            android:targetClass="com.jgc.imageviewer.list.ListImageViewerActivity"
+            android:targetPackage="com.jgc.imageviewer" />
+    </Preference>
+    <Preference
+        android:key="img_view_pager"
+        android:title="ViewPager" >
+        <intent
+            action="android.intent.action.MAIN"
+            android:targetClass="com.jgc.imageviewer.pager.ViewPagerImageViewerActivity"
+            android:targetPackage="com.jgc.imageviewer" />
+    </Preference>
+
+</PreferenceScreen>

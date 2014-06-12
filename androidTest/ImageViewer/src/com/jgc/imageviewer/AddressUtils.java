@@ -1,11 +1,6 @@
-
 package com.jgc.imageviewer;
 
-import android.app.Activity;
-import android.os.Bundle;
-import android.widget.ListView;
-
-public class ImageViewerActivity extends Activity {
+public final class AddressUtils {
 
     public final static String[] IMAGE_URLS = {
         "http://e.hiphotos.baidu.com/super/whfpf%3D425%2C260%2C50/sign=e8b1a1ec31fa828bd176cea39b227506/faf2b2119313b07e9e0f75e10ed7912396dd8cac.jpg",
@@ -15,15 +10,7 @@ public class ImageViewerActivity extends Activity {
         "http://e.hiphotos.baidu.com/super/whfpf%3D425%2C260%2C50/sign=c31423e11d30e924cff1cf712a355a34/d788d43f8794a4c2b902d9c20cf41bd5ad6e3931.jpg"
     };
 
-    private ListView mListView = null;
-
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.image_viewer_main);
-
-        mListView = (ListView) findViewById(R.id.list_view);
-
-        ViewPagerAdapter adapter = new ViewPagerAdapter(this, IMAGE_URLS);
-        mListView.setAdapter(adapter);
+    public static String[] getImgAddresses() {
+        return IMAGE_URLS;
     }
 }

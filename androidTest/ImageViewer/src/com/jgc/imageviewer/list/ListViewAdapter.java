@@ -1,4 +1,4 @@
-package com.jgc.imageviewer;
+package com.jgc.imageviewer.list;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,13 +7,16 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
-public class ViewPagerAdapter extends BaseAdapter {
+import com.jgc.imageviewer.ImgDownloadThread;
+import com.jgc.imageviewer.R;
+
+public class ListViewAdapter extends BaseAdapter {
 
     private LayoutInflater mInflater = null;
     private Context mContext = null;
     private String[] mUrls = null;
 
-    public ViewPagerAdapter(Context context, String[] urls) {
+    public ListViewAdapter(Context context, String[] urls) {
         this.mContext = context;
         this.mInflater = LayoutInflater.from(context);
         this.mUrls = urls;
@@ -21,8 +24,7 @@ public class ViewPagerAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 1000;
-//        return mUrls.length;
+        return mUrls.length;
     }
 
     @Override
