@@ -4,10 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <android.support.v4.view.ViewPager
+    <com.jgc.imageviewer.pager.AnimViewPager
         android:id="@+id/vp_img_viewer"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
-    </android.support.v4.view.ViewPager>
+    </com.jgc.imageviewer.pager.AnimViewPager>
 
 </LinearLayout>

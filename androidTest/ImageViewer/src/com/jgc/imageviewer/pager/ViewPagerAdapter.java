@@ -39,7 +39,7 @@ public class ViewPagerAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return mListViews.size();
+        return mUrls.length;
     }
 
     @Override
