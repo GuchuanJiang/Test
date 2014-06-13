@@ -43,7 +43,7 @@ public class AnimViewPagerAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return 10;
+        return mUrls.length;
     }
 
     @Override

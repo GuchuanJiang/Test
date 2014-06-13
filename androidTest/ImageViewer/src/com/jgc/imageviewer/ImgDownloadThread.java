@@ -41,7 +41,6 @@ public class ImgDownloadThread extends AsyncTask<String, Float, WeakReference<Bi
     @Override
     protected WeakReference<Bitmap> doInBackground(String... url) {
 
-        android.util.Log.e("test", url[0] + "");
         WeakReference<Bitmap> bitmapReference = null;
         Bitmap bitmap = null;
         try {
