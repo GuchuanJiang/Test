@@ -29,8 +29,7 @@ public class ViewPagerImageViewerActivity extends Activity {
             ImageView imageView = new ImageView(this);
             imageViewList.add(imageView);
         }
-        mAdapter = new AnimViewPagerAdapter(this, imageViewList, AddressUtils.getImgAddresses());
-        mViewPager.setTransitionEffect(TransitionEffect.CubeOut);
+        mAdapter = new AnimViewPagerAdapter(this, imageViewList, AddressUtils.getImgAddresses(), mViewPager);
         mViewPager.setAdapter(mAdapter);
         mViewPager.setTransitionEffect(TransitionEffect.CubeOut);
     }

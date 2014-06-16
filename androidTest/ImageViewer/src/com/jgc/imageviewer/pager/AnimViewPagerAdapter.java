@@ -16,6 +16,7 @@ public class AnimViewPagerAdapter extends PagerAdapter {
     private List<ImageView> mListViews = null;
     private String[] mUrls = null;
     private Context mContext = null;
+    private AnimViewPager mViewPager = null;
 
     public AnimViewPagerAdapter(Context context, List<ImageView> viewList) {
         this.mListViews = viewList;
@@ -28,11 +29,19 @@ public class AnimViewPagerAdapter extends PagerAdapter {
         this.mContext = context;
     }
 
+    public AnimViewPagerAdapter(Context context, List<ImageView> viewList, String[] urls, AnimViewPager viewPager) {
+        this.mListViews = viewList;
+        this.mUrls = urls;
+        this.mContext = context;
+        this.mViewPager = viewPager;
+    }
+
     @Override
     public Object instantiateItem(ViewGroup container, final int position) {
         ImgDownloadThread imgDownloadThread = new ImgDownloadThread(mContext, mListViews.get(position));
         imgDownloadThread.execute(mUrls);
         ((ViewPager) container).addView(mListViews.get(position), 0);
+        mViewPager.setObjectForPosition(mListViews.get(position), position);
         return mListViews.get(position);
     }
 
