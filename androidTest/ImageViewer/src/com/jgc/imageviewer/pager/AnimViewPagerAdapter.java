@@ -1,7 +1,5 @@
 package com.jgc.imageviewer.pager;
 
-import java.util.List;
-
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -14,24 +12,20 @@ import com.jgc.imageviewer.ImgDownloadThread;
 
 public class AnimViewPagerAdapter extends PagerAdapter {
 
-    private List<ImageView> mListViews = null;
     private String[] mUrls = null;
     private Context mContext = null;
     private AnimViewPager mViewPager = null;
 
-    public AnimViewPagerAdapter(Context context, List<ImageView> viewList) {
-        this.mListViews = viewList;
+    public AnimViewPagerAdapter(Context context) {
         this.mContext = context;
     }
 
-    public AnimViewPagerAdapter(Context context, List<ImageView> viewList, String[] urls) {
-        this.mListViews = viewList;
+    public AnimViewPagerAdapter(Context context, String[] urls) {
         this.mUrls = urls;
         this.mContext = context;
     }
 
-    public AnimViewPagerAdapter(Context context, List<ImageView> viewList, String[] urls, AnimViewPager viewPager) {
-        this.mListViews = viewList;
+    public AnimViewPagerAdapter(Context context, String[] urls, AnimViewPager viewPager) {
         this.mUrls = urls;
         this.mContext = context;
         this.mViewPager = viewPager;
@@ -49,7 +43,7 @@ public class AnimViewPagerAdapter extends PagerAdapter {
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object obj) {
-        container.removeView(mListViews.get(position));
+        container.removeView(mViewPager.findViewFromObject(position));
     }
 
     @Override

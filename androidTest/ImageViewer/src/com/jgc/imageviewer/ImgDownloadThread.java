@@ -43,11 +43,11 @@ public class ImgDownloadThread extends AsyncTask<String, Float, WeakReference<Bi
 
         WeakReference<Bitmap> bitmapReference = null;
         Bitmap bitmap = null;
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(500);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.test);
         bitmapReference = new WeakReference<Bitmap>(bitmap);
         return bitmapReference;
