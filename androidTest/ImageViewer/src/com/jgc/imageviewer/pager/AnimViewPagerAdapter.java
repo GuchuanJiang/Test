@@ -7,6 +7,7 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
 
 import com.jgc.imageviewer.ImgDownloadThread;
@@ -38,11 +39,12 @@ public class AnimViewPagerAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup container, final int position) {
-        ImgDownloadThread imgDownloadThread = new ImgDownloadThread(mContext, mListViews.get(position));
+        ImageView imageView = new ImageView(mContext);
+        ImgDownloadThread imgDownloadThread = new ImgDownloadThread(mContext, imageView);
         imgDownloadThread.execute(mUrls);
-        ((ViewPager) container).addView(mListViews.get(position), 0);
-        mViewPager.setObjectForPosition(mListViews.get(position), position);
-        return mListViews.get(position);
+        ((ViewPager) container).addView(imageView, LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+        mViewPager.setObjectForPosition(imageView, position);
+        return imageView;
     }
 
     @Override
