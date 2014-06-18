@@ -35,7 +35,7 @@ public class AnimViewPagerAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup container, final int position) {
         ImageView imageView = new ImageView(mContext);
         ImgDownloadThread imgDownloadThread = new ImgDownloadThread(mContext, imageView);
-        imgDownloadThread.execute(mUrls);
+        imgDownloadThread.execute(mUrls[position]);
         ((ViewPager) container).addView(imageView, LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
         mViewPager.setObjectForPosition(imageView, position);
         return imageView;

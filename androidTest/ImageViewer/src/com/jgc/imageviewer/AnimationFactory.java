@@ -1,5 +1,6 @@
 package com.jgc.imageviewer;
 
+import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AnimationSet;
 import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
@@ -43,17 +44,20 @@ public final class AnimationFactory {
     private static AnimationSet getGridViewAnim() {
         AnimationSet set = new AnimationSet(true);
         //translate
-        TranslateAnimation tAnim = new TranslateAnimation(-100, 0, 50, 0);
-        tAnim.setDuration(300);
+        TranslateAnimation tAnim = new TranslateAnimation(-800, 0, -800, 0);
+        tAnim.setDuration(1000);
+        tAnim.setInterpolator(new AccelerateInterpolator());
         set.addAnimation(tAnim);
         //rotate
-        RotateAnimation rAnim = new RotateAnimation(5, 0);
-        rAnim.setDuration(300);
+        RotateAnimation rAnim = new RotateAnimation(90, 0);
+        rAnim.setDuration(1000);
+        rAnim.setInterpolator(new AccelerateInterpolator());
         set.addAnimation(rAnim);
         //scale
-        ScaleAnimation sAnimation = new ScaleAnimation(0.5f, 1f, 0.5f, 1f, 0.5f, 0.5f);
-        sAnimation.setDuration(300);
-        set.addAnimation(sAnimation);
+        ScaleAnimation sAnim = new ScaleAnimation(0.5f, 1f, 0.5f, 1f, 0.5f, 0.5f);
+        sAnim.setDuration(1000);
+        sAnim.setInterpolator(new AccelerateInterpolator());
+        set.addAnimation(sAnim);
         return set;
     }
 }

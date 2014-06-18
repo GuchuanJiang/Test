@@ -26,8 +26,7 @@ public class GridViewAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-//        return mUrls.length;
-        return 1000;
+        return mUrls.length;
     }
 
     @Override
@@ -49,8 +48,7 @@ public class GridViewAdapter extends BaseAdapter {
             holder = new ViewHolder();
             holder.img = (ImageView) convertView.findViewById(R.id.img_grid_item);
             ImgDownloadThread thread = new ImgDownloadThread(mContext, holder.img);
-//            thread.execute(mUrls[position]);
-            thread.execute("");
+            thread.execute(mUrls[position]);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
